@@ -1,5 +1,5 @@
-# weather_dashboard_project (Dynamic Web App Project)
+# Quiz_app_project (Dynamic Web App Project)
 
-Weather Dashboard project that showcases weather forecast information with HTML5, custom CSS, and ES6+ JavaScript.
+Quiz App project that showcases quiz with trivia with HTML5, custom CSS, and ES6+ JavaScript.
 
 By Seunghyeok Kim
