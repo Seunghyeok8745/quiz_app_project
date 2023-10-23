@@ -12,7 +12,6 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="main.css" />
-    <script defer src="main.js"></script>
     <title>Quiz App</title>
   </head>
   <body>
@@ -76,7 +75,7 @@
         <div class="quiz hide">
           <div class="timer">
             <div class="progress">
-              <div class="progress-bar"></div>
+              <div class="progress-bar"  style="width: 0"></div>
               <span class="progress-text"></span>
             </div>
           </div>
@@ -99,9 +98,9 @@
           <button class="btn next">Next</button>
         </div>
         <div class="end-screen hide">
-          <h1 class="heading">Quiz App</h1>
+          <h1 class="heading">Your Result</h1>
           <div class="score">
-            <span class="score-text">Your score:</span>
+            <span class="score-text">Score:</span>
             <div>
               <span class="final-score">0</span>
               <span class="total-score">/10</span>

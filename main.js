@@ -2,7 +2,7 @@ const progressBar = document.querySelector('.progress-bar'),
   progressText = document.querySelector('.progress-text');
 
 const progress = (value) => {
-  const percentage = (value / time) * 100;
+  const percentage = ((time - value) / time) * 100;
   progressBar.style.width = `${percentage}%`;
   progressText.innerHTML = `${value}`;
 };
@@ -90,8 +90,8 @@ const showQuestion = (question) => {
 
 const startTimer = (time) => {
   timer = setInterval(() => {
-    if (time >= 0) {
-      progress(time);
+    progress(time);
+    if (time > 0) {
       time--;
     } else {
       checkAnswer();
@@ -140,7 +140,7 @@ const checkAnswer = () => {
             answer.querySelector('.text').innerHTML ===
             questions[currentQuestion - 1].correct_answer
           ) {
-            answer.classList.add('correct');
+            answer.classList.add('correct-timer');
           }
         });
     }
@@ -152,7 +152,7 @@ const checkAnswer = () => {
           answer.querySelector('.text').innerHTML ===
           questions[currentQuestion - 1].correct_answer
         ) {
-          answer.classList.add('correct');
+          answer.classList.add('correct-timer');
         }
       });
   }
