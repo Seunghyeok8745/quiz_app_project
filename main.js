@@ -2,7 +2,7 @@ const progressBar = document.querySelector('.progress-bar'),
   progressText = document.querySelector('.progress-text');
 
 const progress = (value) => {
-  const percentage = ((time - value) / time) * 100;
+  const percentage = (value / time) * 100;
   progressBar.style.width = `${percentage}%`;
   progressText.innerHTML = `${value}`;
 };
@@ -188,8 +188,3 @@ const restartBtn = document.querySelector('.restart');
 restartBtn.addEventListener('click', () => {
   window.location.reload();
 });
-
-const playAdudio = (src) => {
-  const audio = new Audio(src);
-  audio.play();
-};
