@@ -10,7 +10,6 @@ const progress = (value) => {
 const startBtn = document.querySelector('.start'),
   numQuestions = document.querySelector('#num-questions'),
   category = document.querySelector('#category'),
-  difficulty = document.querySelector('#difficulty'),
   timePerQuestion = document.querySelector('#time'),
   quiz = document.querySelector('.quiz'),
   startScreen = document.querySelector('.start-screen');
@@ -23,10 +22,9 @@ let questions = [],
 
 const startQuiz = () => {
   const num = numQuestions.value,
-    cat = category.value,
-    diff = difficulty.value;
+    cat = category.value;
   loadingAnimation();
-  const url = `https://opentdb.com/api.php?amount=${num}&category=${cat}&difficulty=${diff}&type=multiple`;
+  const url = `https://opentdb.com/api.php?amount=${num}&category=${cat}&type=multiple`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -57,19 +55,19 @@ const showQuestion = (question) => {
   answers.sort(() => Math.random() - 0.5);
   answers.forEach((answer) => {
     answersWrapper.innerHTML += `
-                  <div class="answer ">
-            <span class="text">${answer}</span>
-            <span class="checkbox">
-              <i class="fas fa-check"></i>
-            </span>
-          </div>
-        `;
+                    <div class="answer ">
+              <span class="text">${answer}</span>
+              <span class="checkbox">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          `;
   });
 
   questionNumber.innerHTML = ` Question <span class="current">${
     questions.indexOf(question) + 1
   }</span>
-            <span class="total">/${questions.length}</span>`;
+              <span class="total">/${questions.length}</span>`;
   //add event listener to each answer
   const answersDiv = document.querySelectorAll('.answer');
   answersDiv.forEach((answer) => {

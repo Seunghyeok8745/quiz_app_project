@@ -80,7 +80,7 @@ select {
   width: 100%;
   height: 40px;
   background: #ffffff0a;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
   border: 1px solid #ffffff0a;
@@ -88,7 +88,7 @@ select {
 .timer .progress .progress-bar {
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   background: linear-gradient(to right, #4778ef, #54b0fd);
   transition: 1s linear;
@@ -105,6 +105,7 @@ select {
 
 .question-wrapper .number {
   color: #ffffff;
+  text-align: center;
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 20px;
@@ -126,7 +127,7 @@ select {
   padding: 20px;
   border-radius: 10px;
   color: #fff;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -137,8 +138,8 @@ select {
 .answer .checkbox {
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
+  border-radius: 15px;
+  border: 1px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -260,7 +261,7 @@ select {
 
   .btn.next {
     height: 40px;
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .end-screen .score {
@@ -268,6 +269,6 @@ select {
   }
 
   .score .score-text {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
