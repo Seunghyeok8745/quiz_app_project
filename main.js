@@ -63,12 +63,10 @@ const showQuestion = (question) => {
             </div>
           `;
   });
-
-  questionNumber.innerHTML = ` Question <span class="current">${
+  questionNumber.innerHTML = `<span class="current">${
     questions.indexOf(question) + 1
-  }</span>
-              <span class="total">/${questions.length}</span>`;
-  //add event listener to each answer
+  }</span> of ${questions.length} Questions`;
+
   const answersDiv = document.querySelectorAll('.answer');
   answersDiv.forEach((answer) => {
     answer.addEventListener('click', () => {
@@ -99,6 +97,7 @@ const startTimer = (time) => {
 
 const loadingAnimation = () => {
   startBtn.innerHTML = 'Loading';
+  startBtn.classList.add('disabled-button');
   const loadingInterval = setInterval(() => {
     if (startBtn.innerHTML.length === 10) {
       startBtn.innerHTML = 'Loading';
@@ -142,17 +141,6 @@ const checkAnswer = () => {
           }
         });
     }
-  } else {
-    const correctAnswer = document
-      .querySelectorAll('.answer')
-      .forEach((answer) => {
-        if (
-          answer.querySelector('.text').innerHTML ===
-          questions[currentQuestion - 1].correct_answer
-        ) {
-          answer.classList.add('correct-timer');
-        }
-      });
   }
   const answersDiv = document.querySelectorAll('.answer');
   answersDiv.forEach((answer) => {

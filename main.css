@@ -13,23 +13,26 @@ body {
   background: url(/Users/seunghyeokkim/Desktop/quiz_app_project/giphy.gif);
   background-size: cover;
 }
+/*container-structure*/
 .heading-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+/*main-title*/
 .main-heading {
-  font-size: 35px;
-  margin: 30px;
+  font-size: 40px;
+  margin: 60px;
   color: #fff;
 }
+/*container*/
 .container {
   position: relative;
   width: 100%;
-  max-width: 400px;
-  background: #1c1c1c83;
-  padding: 35px;
+  max-width: 600px;
+  background: #ffffff79;
+  padding: 40px;
   margin: 0 auto;
   margin-bottom: 50px;
   overflow: hidden;
@@ -40,14 +43,14 @@ body {
 .heading {
   text-align: center;
   font-size: 30px;
-  color: #fff;
+  color: #1e3050;
   margin-bottom: 30px;
 }
 label {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 10px;
-  color: #fff;
+  color: #1e3050;
 }
 select {
   width: 100%;
@@ -57,15 +60,16 @@ select {
   border-radius: 5px;
   margin-bottom: 20px;
   background: #fff;
-  color: #1f2847;
+  color: #121212;
   font-size: 14px;
 }
 .start-screen .btn {
-  margin-top: 50px;
+  margin-top: 22px;
 }
 .hide {
   display: none;
 }
+/*quiz-page*/
 .timer {
   width: 100%;
   height: 100px;
@@ -79,18 +83,18 @@ select {
   position: relative;
   width: 100%;
   height: 40px;
-  background: #ffffff0a;
+  background: #3232320e;
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
-  border: 1px solid #ffffff0a;
+  border: 1px solid #3232320e;
 }
 .timer .progress .progress-bar {
   width: 100%;
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
-  background: linear-gradient(to right, #4778ef, #54b0fd);
+  background: linear-gradient(to left, #ffffff, #f2f2f2, #e2e2e2);
   transition: 1s linear;
 }
 .timer .progress .progress-text {
@@ -98,36 +102,36 @@ select {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: #1e3050;
   font-size: 16px;
   font-weight: 500;
 }
-
+/*question/checkbox-wrap*/
 .question-wrapper .number {
-  color: #ffffff;
+  color: #1e3050;
   text-align: center;
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 20px;
 }
 .question-wrapper .number .total {
-  color: #ffffff;
+  color: #1e3050;
   font-size: 18px;
 }
 .question-wrapper .question {
-  color: #fff;
+  color: #1e3050;
+  text-align: center;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 20px;
 }
-
 .answer-wrapper .answer {
   width: 100%;
   height: 60px;
   padding: 20px;
   border-radius: 10px;
-  color: #fff;
-  border: 1px solid #ffffff;
+  color: #1e3050;
+  border: 1.5px solid #1e3050;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,11 +139,15 @@ select {
   cursor: pointer;
   transition: 0.3s linear;
 }
+.answer:hover,
+.answer.selected {
+  background-color: #ffffff;
+}
 .answer .checkbox {
   width: 20px;
   height: 20px;
   border-radius: 15px;
-  border: 1px solid #ffffff;
+  border: 1px solid #1e3050;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,8 +161,8 @@ select {
 }
 .answer:hover:not(.checked) .checkbox,
 .answer.selected .checkbox {
-  background-color: #fff;
-  border-color: #fff;
+  background-color: #1e3050;
+  border-color: #1e3050;
 }
 .answer.selected .checkbox i {
   opacity: 1;
@@ -172,10 +180,11 @@ select {
 .answer-wrapper {
   margin-bottom: 50px;
 }
+/*quiz-button*/
 .btn {
   width: 100%;
-  height: 60px;
-  background: #1c1c1d;
+  height: 40px;
+  background: #6243d1;
   border: none;
   border-radius: 10px;
   color: #fff;
@@ -185,34 +194,46 @@ select {
   transition: 0.3s linear;
 }
 .btn:hover {
-  background: #323232;
+  background: #6243d1c9;
+  color: #121212;
 }
 .btn:disabled {
   background: #576081;
+  color: #1e3050;
+  cursor: not-allowed;
+}
+.disabled-button {
+  pointer-events: none;
+  background: #6243d1c9;
+  color: #fff;
   cursor: not-allowed;
 }
 .btn.next {
   font-size: 18px;
   display: none;
 }
-
+/*score-page*/
 .end-screen .score {
-  color: #fff;
-  font-size: 25px;
+  color: #1e3050;
+  font-size: 30px;
   font-weight: 500;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   text-align: center;
 }
 .score .score-text {
-  color: #ffffff;
-  font-size: 22px;
+  color: #1e3050;
+  font-size: 27px;
   font-weight: 500;
   margin-bottom: 120px;
 }
-
+/*responsive-page*/
 @media (max-width: 768px) {
+  .container {
+    max-width: 400px;
+  }
   .main-heading {
-    font-size: 32px;
+    font-size: 34px;
+    padding: 27px 0;
     margin: 25px;
   }
 
@@ -221,12 +242,9 @@ select {
   }
 
   .heading {
-    font-size: 28px;
+    font-size: 26px;
   }
 
-  .label {
-    font-size: 10px;
-  }
   select {
     font-size: 12px;
   }
@@ -260,15 +278,15 @@ select {
   }
 
   .btn.next {
-    height: 40px;
-    font-size: 19px;
+    height: 50px;
+    font-size: 18px;
   }
 
   .end-screen .score {
-    font-size: 20px;
+    font-size: 28px;
   }
 
   .score .score-text {
-    font-size: 20px;
+    font-size: 25px;
   }
 }
