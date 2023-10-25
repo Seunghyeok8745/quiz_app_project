@@ -60,7 +60,7 @@ select {
   border: none;
   text-transform: capitalize;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   background: #fff;
   color: #121212;
   font-size: 14px;
@@ -220,14 +220,14 @@ select {
 /*score-page*/
 .end-screen .score {
   color: #1e3050;
-  font-size: 30px;
+  font-size: 29px;
   font-weight: 500;
   margin-bottom: 50px;
   text-align: center;
 }
 .score .score-text {
   color: #1e3050;
-  font-size: 27px;
+  font-size: 26px;
   font-weight: 500;
   margin-bottom: 120px;
 }
@@ -237,9 +237,9 @@ select {
     max-width: 380px;
   }
   .main-heading {
-    font-size: 30px;
-    padding: 15px 0;
-    margin: 25px;
+    font-size: 25px;
+    padding: 10px 0;
+    margin: 18px;
   }
   .container {
     padding: 20px;
@@ -260,7 +260,6 @@ select {
   .timer {
     height: 80px;
   }
-
   .question-wrapper .number {
     font-size: 20px;
   }
@@ -286,10 +285,10 @@ select {
   }
 
   .end-screen .score {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .score .score-text {
-    font-size: 22px;
+    font-size: 21px;
   }
 }
