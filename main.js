@@ -1,6 +1,7 @@
 const progressBar = document.querySelector('.progress-bar'),
   progressText = document.querySelector('.progress-text');
 
+//progress-bar-motion//
 const progress = (value) => {
   const percentage = (value / time) * 100;
   progressBar.style.width = `${percentage}%`;
@@ -19,7 +20,7 @@ let questions = [],
   score = 0,
   currentQuestion,
   timer;
-
+//quiz-display//
 const startQuiz = () => {
   const num = numQuestions.value,
     cat = category.value;
@@ -46,7 +47,8 @@ const showQuestion = (question) => {
   questionNumber = document.querySelector('.number');
 
   questionText.innerHTML = question.question;
-
+  //answerfromquiz-display//
+  //checkbox-display//
   const answers = [
     ...question.incorrect_answers,
     question.correct_answer.toString(),
@@ -79,7 +81,7 @@ const showQuestion = (question) => {
       }
     });
   });
-
+  //timer//
   time = timePerQuestion.value;
   startTimer(time);
 };
@@ -94,7 +96,7 @@ const startTimer = (time) => {
     }
   }, 1000);
 };
-
+//loading-animate//
 const loadingAnimation = () => {
   startBtn.innerHTML = 'Loading';
   startBtn.classList.add('disabled-button');
@@ -106,7 +108,7 @@ const loadingAnimation = () => {
     }
   }, 500);
 };
-
+//submit-function//
 const submitBtn = document.querySelector('.submit'),
   nextBtn = document.querySelector('.next');
 submitBtn.addEventListener('click', () => {
@@ -118,7 +120,7 @@ nextBtn.addEventListener('click', () => {
   submitBtn.style.display = 'block';
   nextBtn.style.display = 'none';
 });
-
+//correct/wrong-answer-display//
 const checkAnswer = () => {
   clearInterval(timer);
   const selectedAnswer = document.querySelector('.answer.selected');
@@ -141,6 +143,17 @@ const checkAnswer = () => {
           }
         });
     }
+  } else {
+    const correctAnswer = document
+      .querySelectorAll('.answer')
+      .forEach((answer) => {
+        if (
+          answer.querySelector('.text').innerHTML ===
+          questions[currentQuestion - 1].correct_answer
+        ) {
+          answer.classList.add('correct-timer');
+        }
+      });
   }
   const answersDiv = document.querySelectorAll('.answer');
   answersDiv.forEach((answer) => {
@@ -150,7 +163,7 @@ const checkAnswer = () => {
   submitBtn.style.display = 'none';
   nextBtn.style.display = 'block';
 };
-
+//next-function//
 const nextQuestion = () => {
   if (currentQuestion < questions.length) {
     currentQuestion++;
@@ -159,7 +172,7 @@ const nextQuestion = () => {
     showScore();
   }
 };
-
+//score-function//
 const endScreen = document.querySelector('.end-screen'),
   finalScore = document.querySelector('.final-score'),
   totalScore = document.querySelector('.total-score');
@@ -169,7 +182,7 @@ const showScore = () => {
   finalScore.innerHTML = score;
   totalScore.innerHTML = `/ ${questions.length}`;
 };
-
+//restart-function//
 const restartBtn = document.querySelector('.restart');
 restartBtn.addEventListener('click', () => {
   window.location.reload();

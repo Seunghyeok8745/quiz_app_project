@@ -48,10 +48,12 @@ body {
 }
 label {
   display: block;
-  font-size: 14px;
+  text-align: center;
+  font-size: 16px;
   margin-bottom: 10px;
   color: #1e3050;
 }
+
 select {
   width: 100%;
   padding: 10px;
@@ -62,13 +64,16 @@ select {
   background: #fff;
   color: #121212;
   font-size: 14px;
+  text-align: center;
 }
+
 .start-screen .btn {
   margin-top: 22px;
 }
 .hide {
   display: none;
 }
+
 /*quiz-page*/
 .timer {
   width: 100%;
@@ -229,20 +234,18 @@ select {
 /*responsive-page*/
 @media (max-width: 768px) {
   .container {
-    max-width: 400px;
+    max-width: 380px;
   }
   .main-heading {
-    font-size: 34px;
-    padding: 27px 0;
+    font-size: 30px;
+    padding: 15px 0;
     margin: 25px;
   }
-
   .container {
     padding: 20px;
   }
-
   .heading {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   select {
@@ -283,10 +286,10 @@ select {
   }
 
   .end-screen .score {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .score .score-text {
-    font-size: 25px;
+    font-size: 22px;
   }
 }
