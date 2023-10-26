@@ -1,7 +1,7 @@
 const progressBar = document.querySelector('.progress-bar'),
   progressText = document.querySelector('.progress-text');
 
-//progress-bar-motion//
+// Function to update progress bar and text
 const progress = (value) => {
   const percentage = (value / time) * 100;
   progressBar.style.width = `${percentage}%`;
@@ -20,7 +20,7 @@ let questions = [],
   score = 0,
   currentQuestion,
   timer;
-//quiz-display//
+// Start the quiz
 const startQuiz = () => {
   const num = numQuestions.value,
     cat = category.value;
@@ -40,15 +40,14 @@ const startQuiz = () => {
 };
 
 startBtn.addEventListener('click', startQuiz);
-
+// Display a question
 const showQuestion = (question) => {
   const questionText = document.querySelector('.question'),
     answersWrapper = document.querySelector('.answer-wrapper');
   questionNumber = document.querySelector('.number');
 
   questionText.innerHTML = question.question;
-  //answerfromquiz-display//
-  //checkbox-display//
+  // Prepare and display answers
   const answers = [
     ...question.incorrect_answers,
     question.correct_answer.toString(),
@@ -81,7 +80,7 @@ const showQuestion = (question) => {
       }
     });
   });
-  //timer//
+  // Start the timer for the current question
   time = timePerQuestion.value;
   startTimer(time);
 };
@@ -96,7 +95,7 @@ const startTimer = (time) => {
     }
   }, 1000);
 };
-//loading-animate//
+// Show loading animation
 const loadingAnimation = () => {
   startBtn.innerHTML = 'Loading';
   startBtn.classList.add('disabled-button');
@@ -108,7 +107,7 @@ const loadingAnimation = () => {
     }
   }, 500);
 };
-//submit-function//
+// Function to check the selected answer
 const submitBtn = document.querySelector('.submit'),
   nextBtn = document.querySelector('.next');
 submitBtn.addEventListener('click', () => {
@@ -155,6 +154,7 @@ const checkAnswer = () => {
         }
       });
   }
+  // Mark answers as checked
   const answersDiv = document.querySelectorAll('.answer');
   answersDiv.forEach((answer) => {
     answer.classList.add('checked');
@@ -163,7 +163,7 @@ const checkAnswer = () => {
   submitBtn.style.display = 'none';
   nextBtn.style.display = 'block';
 };
-//next-function//
+// Move to the next question
 const nextQuestion = () => {
   if (currentQuestion < questions.length) {
     currentQuestion++;
@@ -172,7 +172,7 @@ const nextQuestion = () => {
     showScore();
   }
 };
-//score-function//
+// Display the final score
 const endScreen = document.querySelector('.end-screen'),
   finalScore = document.querySelector('.final-score'),
   totalScore = document.querySelector('.total-score');
@@ -182,7 +182,7 @@ const showScore = () => {
   finalScore.innerHTML = score;
   totalScore.innerHTML = `/ ${questions.length}`;
 };
-//restart-function//
+// Restart the quiz
 const restartBtn = document.querySelector('.restart');
 restartBtn.addEventListener('click', () => {
   window.location.reload();

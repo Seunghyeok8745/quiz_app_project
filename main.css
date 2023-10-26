@@ -1,3 +1,4 @@
+/* Importing Google Font */
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 * {
@@ -6,6 +7,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+/* Body Styles */
 body {
   min-height: 100vh;
   align-items: center;
@@ -13,20 +15,19 @@ body {
   background: url(/Users/seunghyeokkim/Desktop/quiz_app_project/giphy.gif);
   background-size: cover;
 }
-/*container-structure*/
+/*container structure*/
+
+/* Heading Container Styles */
 .heading-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-/*main-title*/
 .main-heading {
-  font-size: 40px;
-  margin: 60px;
-  color: #fff;
+  font-size: 28px;
 }
-/*container*/
+/*container styles*/
 .container {
   position: relative;
   width: 100%;
@@ -39,13 +40,17 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .heading {
   text-align: center;
   font-size: 30px;
   color: #1e3050;
   margin-bottom: 30px;
 }
+/* Subheading Styles */
+h2 {
+  font-size: 25px;
+}
+/* Label Styles */
 label {
   display: block;
   text-align: center;
@@ -53,7 +58,7 @@ label {
   margin-bottom: 10px;
   color: #1e3050;
 }
-
+/* Select Styles */
 select {
   width: 100%;
   padding: 10px;
@@ -66,15 +71,18 @@ select {
   font-size: 14px;
   text-align: center;
 }
-
+/* Start Screen Button Styles */
 .start-screen .btn {
   margin-top: 22px;
 }
+/* Hide Class (Display Utility) */
 .hide {
   display: none;
 }
 
-/*quiz-page*/
+/* Quiz Page Styles */
+
+/* Timer Styles */
 .timer {
   width: 100%;
   height: 100px;
@@ -84,6 +92,7 @@ select {
   flex-direction: column;
   margin-bottom: 30px;
 }
+/* Progress Bar Styles */
 .timer .progress {
   position: relative;
   width: 100%;
@@ -94,6 +103,7 @@ select {
   margin-bottom: 10px;
   border: 1px solid #3232320e;
 }
+/* Progress Bar Fill Styles */
 .timer .progress .progress-bar {
   width: 100%;
   height: 100%;
@@ -102,6 +112,7 @@ select {
   background: linear-gradient(to left, #ffffff, #f2f2f2, #e2e2e2);
   transition: 1s linear;
 }
+/* Progress Bar Text Styles */
 .timer .progress .progress-text {
   position: absolute;
   top: 50%;
@@ -111,7 +122,7 @@ select {
   font-size: 16px;
   font-weight: 500;
 }
-/*question/checkbox-wrap*/
+/* Question and Checkbox Styles */
 .question-wrapper .number {
   color: #1e3050;
   text-align: center;
@@ -119,10 +130,12 @@ select {
   font-weight: 500;
   margin-bottom: 20px;
 }
+/* Question Number Styles */
 .question-wrapper .number .total {
   color: #1e3050;
   font-size: 18px;
 }
+/* Question Text Styles */
 .question-wrapper .question {
   color: #1e3050;
   text-align: center;
@@ -130,6 +143,7 @@ select {
   font-weight: 500;
   margin-bottom: 20px;
 }
+/* Answer Wrapper Styles */
 .answer-wrapper .answer {
   width: 100%;
   height: 60px;
@@ -144,10 +158,12 @@ select {
   cursor: pointer;
   transition: 0.3s linear;
 }
+/* Answer Hover and Selected Styles */
 .answer:hover,
 .answer.selected {
   background-color: #ffffff;
 }
+/* Checkbox Styles */
 .answer .checkbox {
   width: 20px;
   height: 20px;
@@ -158,12 +174,14 @@ select {
   justify-content: center;
   transition: all 0.3s;
 }
+/* Checkbox Icon Styles */
 .answer .checkbox i {
   color: #fff;
   font-size: 10px;
   opacity: 0;
   transition: all 0.3s;
 }
+/* Checkbox Hover and Selected Styles */
 .answer:hover:not(.checked) .checkbox,
 .answer.selected .checkbox {
   background-color: #1e3050;
@@ -172,24 +190,27 @@ select {
 .answer.selected .checkbox i {
   opacity: 1;
 }
+/* Correct Timer Styles */
 .answer.correct-timer {
   background: #20bc2d;
   border-color: #20bc2d;
 }
-
+/* Wrong Answer Styles */
 .answer.wrong {
   background-color: #e94d4e;
   border-color: #e94d4e;
 }
+/* Margin for Question and Answer Sections */
 .question-wrapper,
 .answer-wrapper {
   margin-bottom: 50px;
 }
-/*quiz-button*/
+/* Quiz Button Styles */
+
+/* General Button Styles */
 .btn {
   width: 100%;
   height: 40px;
-  background: #6243d1;
   border: none;
   border-radius: 10px;
   color: #fff;
@@ -198,26 +219,33 @@ select {
   cursor: pointer;
   transition: 0.3s linear;
 }
+/* Button Hover Styles */
 .btn:hover {
-  background: #6243d1c9;
+  background: #54a5fb;
   color: #121212;
 }
+/* Disabled Button Styles */
 .btn:disabled {
   background: #576081;
   color: #1e3050;
   cursor: not-allowed;
 }
+/* Disabled Button with Darker Background Styles */
 .disabled-button {
   pointer-events: none;
   background: #6243d1c9;
   color: #fff;
   cursor: not-allowed;
 }
+/* Next Button Styles */
 .btn.next {
   font-size: 18px;
   display: none;
 }
-/*score-page*/
+
+/*score page*/
+
+/* End Screen Styles */
 .end-screen .score {
   color: #1e3050;
   font-size: 29px;
@@ -231,15 +259,16 @@ select {
   font-weight: 500;
   margin-bottom: 120px;
 }
-/*responsive-page*/
+
+/*responsive page*/
 @media (max-width: 768px) {
   .container {
     max-width: 380px;
+    padding: 10px;
   }
   .main-heading {
-    font-size: 20px;
-    padding: 10px 0;
-    margin: 18px;
+    font-size: 35px;
+    margin: 0;
   }
   .container {
     padding: 20px;

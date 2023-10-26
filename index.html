@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--Meta Information-->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- External CSS Links-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -11,31 +13,42 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
     <link rel="stylesheet" href="main.css" />
+    <!--Page Title-->
     <title>Quiz App</title>
   </head>
   <body>
-    <!--header-->
-    <div class="background-image"></div>
+    <!--Header Section-->
     <div class="heading-container">
-      <h1 class="main-heading hidden">OpenTrivia Quiz</h1>
+      <div class="jumbotron text-center bg-transparent text-white mb-0">
+        <h1 class="display-7 main-heading">OpenTrivia Quiz</h1>
     </div>
-    <!--quiz-container-->
+    <!--quiz container-->
     <div class="container">
+      <!--Start Screen-->
       <div class="start-screen">
-        <h2 class="heading">Let's Start the Quiz!</h2>
+        <h2 class="display-20 text-center mb-4">Let's Start the Quiz!</h2>
         <div class="settings">
-          <!--category-->
+          <!--number of question selector-->
+          <div class="form-group">
           <label for="num-questions">How Many Questions:</label>
-          <select id="num-questions">
+          <select class="form-control" id="num-questions">
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
             <option value="20">20</option>
           </select>
-          <!--type-category-->
+        </div>
+          <!-- Category Selector -->
+          <div class="form-group">
           <label for="category">Select Type:</label>
-          <select id="category">
+          <select class="form-control" id="category">
+            <!-- Various quiz categories -->
             <option value="">Any Type</option>
             <option value="9">general knowledge</option>
             <option value="10">books</option>
@@ -55,25 +68,30 @@
             <option value="25">art</option>
             <option value="28">vehicles</option>
           </select>
-          <!--time-category-->
+        </div>
+          <!-- Time Selector -->
+          <div class="form-group">
           <label for="time">Select Time:</label>
-          <select id="time">
+          <select class="form-control" id="time">
             <option value="10">10 seconds</option>
             <option value="15">15 seconds</option>
             <option value="20">20 seconds</option>
           </select>
         </div>
-        <!--start-loading-button-->
-        <button class="btn start">Start</button>
       </div>
+        <!--start button-->
+        <button class="btn start btn-primary btn-custom">Start</button>
+      </div>
+      <!-- Quiz Section -->
       <div class="quiz hide">
         <div class="timer">
+          <!-- Timer and Progress Bar -->
           <div class="progress">
             <div class="progress-bar" style="width: 0"></div>
             <span class="progress-text"></span>
           </div>
         </div>
-        <!--question-wrapper-->
+        <!--question wrapper-->
         <div class="question-wrapper">
           <div class="number">
             <span class="current">1</span>
@@ -81,20 +99,21 @@
           </div>
           <div class="question">This is a question</div>
         </div>
+        <!-- Answer Wrapper -->
         <div class="answer-wrapper">
           <div class="answer selected">
             <span class="text">answer</span>
             <span class="checkbox">
               <i class="fas fa-check"></i>
-              <i class="fas fa-xmark"></i>
+              <!-- Checkmark-->
             </span>
           </div>
         </div>
         <!--submit-next-button-->
-        <button class="btn submit" disabled>Submit</button>
-        <button class="btn next">Next</button>
+        <button class="btn submit btn-primary btn-lg" disabled>Submit</button>
+        <button class="btn next btn-primary btn-lg">Next</button>
       </div>
-      <!--score-page-->
+      <!-- Score Page -->
       <div class="end-screen hide">
         <h1 class="heading">Your Result</h1>
         <div class="score">
@@ -104,9 +123,13 @@
             <span class="total-score">/10</span>
           </div>
         </div>
-        <button class="btn restart">Restart Quiz</button>
+        <!-- Restart Quiz Button -->
+        <button class="btn restart btn-primary btn-lg">Restart Quiz</button>
       </div>
     </div>
+    <!-- JavaScript Script -->
     <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
